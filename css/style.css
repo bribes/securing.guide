@@ -129,10 +129,9 @@ a[disabled] {
 
 @media screen and (max-width: 600px) {
     .info {
-        width: 95%;
+        width: 95vw;
         padding: 42px;
         font-size: 20px;
-        min-width: max-content;
     }
 
     .info img {
