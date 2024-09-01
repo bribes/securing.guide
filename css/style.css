@@ -31,7 +31,6 @@ body {
 
 .info {
     display: -webkit-inline-box;
-    /* position: relative; */
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, .5);
     padding: 14px;
@@ -88,7 +87,6 @@ a.github {
 ul {
     text-align: left;
     list-style-type: none;
-    /* max-width: calc(100% * .7); */
     height: min-content;
     position: absolute;
     top: 20%;
@@ -106,7 +104,6 @@ ul>li:before {
 
 .info img {
     margin: 12px;
-    /* position: absolute; */
     margin-left: 4%;
     margin-bottom: 3px;
 }
@@ -135,11 +132,24 @@ a[disabled] {
         width: 95%;
         padding: 42px;
         font-size: 20px;
+        min-width: max-content;
     }
 
     .info img {
-        top: 0;
+        position: absolute;
         width: 24px;
+        left: 0;
+        top: 0;
+    }
+
+    ul {
+        position:unset
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .info {
+        min-width: unset;
     }
 }
 
