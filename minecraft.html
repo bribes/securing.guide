@@ -30,26 +30,25 @@
 
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.ico">
+
+    <script src="./pages/minecraft.js"></script>
+    <script src="./js/generate.js" defer></script>
 </head>
 
 <body>
     <a rel="nofollow" href="https://github.com/bribes/securing.guide" target="_blank" title="GitHub Repository"
         class="github"><img src="./icons/github.png" alt="GitHub"></a>
     <div class="container">
-        <h1><a href="/">securing.guide</a></h1>
-
-        <h3>secure your social media accounts</h3>
-        <div class="pages">
-            <a href="/minecraft">
-                <div>
-                    <img src="./icons/minecraft.png" width="32">
-                </div>
-            </a>
-            <a href="/2fa">
-                <div>
-                    2FA
-                </div>
-            </a>
+        <h1><a href="/">securing.guide</a><i>/minecraft</i></h1>
+        <div class="info">
+            <img src="./icons/minecraft.png" width="48" alt="Minecraft" />
+            <ul id="list">
+            </ul>
+        </div>
+        <div class="paginate">
+            <a id="prevEl" href="javascript:prevPage()" disabled><</a>
+            <p id="stepDisplay">step 1 of 1</p>
+            <a id="nextEl" href="javascript:nextPage()">></a>
         </div>
     </div>
 </body>

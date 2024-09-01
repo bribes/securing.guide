@@ -1,6 +1,5 @@
 window.steps = [
     {
-        "image": "./icons/minecraft",
         "points": [
             "Sign in to your account [here](https://login.live.com/)",
             "Go to the [Devices](https://account.microsoft.com/devices) tab",
@@ -8,7 +7,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "Open a new browser tab",
             "Go to the [Activity](https://account.live.com/Activity) page",
@@ -16,7 +14,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "Go to the [Security](https://account.microsoft.com/security)    tab ",
             "Click on [Manage how I sign in](https://account.live.com/proofs/manage/additional)",
@@ -24,7 +21,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "Turn off 2FA",
             "Remove old recovery methods",
@@ -32,7 +28,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "Click on 'Sign out everywhere'",
             "Reset Windows Hello (exploit)",
@@ -40,7 +35,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "[Change the password](https://account.live.com/password/Change)",
             "Make sure your password is secure",
@@ -48,7 +42,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "Go to the [Your Info](https://account.microsoft.com/profile) tab",
             "Click on [Edit account info](https://account.live.com/names/manage)",
@@ -56,7 +49,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "Make your new alias primary",
             "Remove all other aliases",
@@ -64,7 +56,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "Go back to the [Your Info](https://account.microsoft.com/profile) tab",
             "Click on 'Edit profile info'",
@@ -72,7 +63,6 @@ window.steps = [
         ]
     },
     {
-        "image": "./icons/minecraft",
         "points": [
             "Remove all apps from [this page](https://account.microsoft.com/privacy/app-access)",
             "Remove all devices from [this page](https://account.microsoft.com/devices/content)",

@@ -46,11 +46,32 @@ body {
     padding-top: 13px;
 }
 
+.options {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding: 14px;
+    border-radius: .8rem;
+    font-family: 'Inconsolata';
+    font-weight: 500;
+    font-size: 19px;
+    width: 480px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    padding-bottom: 16px;
+    padding-top: 13px;
+    margin-bottom: 2rem;
+}
+
 p,
 .paginate a {
     font-size: 18px;
     color: rgba(255, 255, 255, .5);
     font-weight: 500;
+}
+
+a:hover {
+ opacity: .6;   
 }
 
 h1 {
@@ -59,9 +80,23 @@ h1 {
     margin-bottom: 1.1rem;
 }
 
+h1 a {
+    text-decoration: none;
+}
+
+h1 a:hover {
+    text-decoration: underline;
+}
+
 h1 i {
     font-style: normal;
     opacity: .5;
+}
+
+h3 {
+    font-weight: 400;
+    color: rgba(255, 255, 255, .5);
+    margin-bottom: 1rem;
 }
 
 a {
@@ -87,17 +122,21 @@ a.github {
 ul {
     text-align: left;
     list-style-type: none;
+
+}
+
+.info ul {
     height: min-content;
     position: absolute;
     top: 20%;
     left: 17.5%;
 }
 
-ul>li {
+ul > li {
     text-indent: -5px;
 }
 
-ul>li:before {
+ul > li:before {
     content: "— ";
     text-indent: -5px;
 }
@@ -127,28 +166,52 @@ a[disabled] {
     color: rgba(255, 255, 255, .25);
 }
 
+.pages {
+    display: flex;
+    gap: 15%;
+}
+
+.pages a {
+    text-decoration: none;
+}
+
+.pages a > div {
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: .5rem;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .5);
+}
+
 @media screen and (max-width: 600px) {
-    .info {
-        width: 95vw;
-        padding: 42px;
-        font-size: 20px;
+    .info, .options {
+        width: 95vw!important;
+        padding: 42px!important;
+        font-size: 20px!important;
     }
 
     .info img {
-        position: absolute;
-        width: 24px;
-        left: 0;
-        top: 0;
+        position: absolute!important;
+        width: 24px!important;
+        left: 0!important;
+        top: 0!important;
     }
 
     ul {
-        position: unset;
+        position: unset!important;
+    }
+
+    .github {
+        display: none!important;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .info {
-        min-width: unset;
+    .info, .options {
+        min-width: unset!important;
     }
 }
 

@@ -36,20 +36,24 @@
     <a rel="nofollow" href="https://github.com/bribes/securing.guide" target="_blank" title="GitHub Repository"
         class="github"><img src="./icons/github.png" alt="GitHub"></a>
     <div class="container">
-        <h1><a href="/">securing.guide</a></h1>
+        <h1><a href="/">securing.guide</a><i>/2fa</i></h1>
 
-        <h3>secure your social media accounts</h3>
-        <div class="pages">
-            <a href="/minecraft">
-                <div>
-                    <img src="./icons/minecraft.png" width="32">
-                </div>
-            </a>
-            <a href="/2fa">
-                <div>
-                    2FA
-                </div>
-            </a>
+        <h3>option 1: use an authenticator app</h3>
+        <div class="options">
+            <ul id="list">
+                <li><a href="https://www.microsoft.com/en-us/security/mobile-authenticator-app" target="_blank">Microsoft Authenticator</a></li>
+                <li><a href="https://support.google.com/accounts/answer/1066447" target="_blank">Google Authenticator</a></li>
+                <li><a href="https://authy.com/download" target="_blank">Authy</a></li>
+            </ul>
+        </div>
+
+        <h3>option 2: use a 2fa secret</h3>
+        <div class="options">
+            <ul id="list">
+                <li>Look for a 16/32 digit code (secret key)</li>
+                <li>Paste the secret key into <a href="https://totp.codes/" target="_blank">totp.codes  </a></li>
+                <li>Keep your secret key in a safe place</li>
+            </ul>
         </div>
     </div>
 </body>
