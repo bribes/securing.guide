@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Inconsolata', sans-serif !important;
+    -webkit-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+html,
+body {
+    background-color: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    display: -webkit-inline-box;
+    /* position: relative; */
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding: 14px;
+    border-radius: .8rem;
+    font-family: 'Inconsolata';
+    font-weight: 500;
+    font-size: 19px;
+    width: 480px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    padding-bottom: 16px;
+    padding-top: 13px;
+}
+
+p,
+.paginate a {
+    font-size: 18px;
+    color: rgba(255, 255, 255, .5);
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 1.55em;
+    margin-bottom: 1.1rem;
+}
+
+h1 i {
+    font-style: normal;
+    opacity: .2;
+}
+
+a {
+    color: white
+}
+
+a.github {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    top: 0;
+    margin: 2rem;
+}
+
+.github img {
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+    opacity: .2;
+}
+
+ul {
+    text-align: left;
+    list-style-type: none;
+    /* max-width: calc(100% * .7); */
+    height: min-content;
+    position: absolute;
+    top: 22.5%;
+    left: 17.5%;
+}
+
+ul>li {
+    text-indent: -5px;
+}
+
+ul>li:before {
+    content: "— ";
+    text-indent: -5px;
+}
+
+.info img {
+    margin: 12px;
+    /* position: absolute; */
+    margin-left: 4%;
+    margin-bottom: 3px;
+}
+
+.paginate {
+    display: flex;
+    gap: 10%;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.5rem;
+    user-select: none;
+}
+
+.paginate a {
+    text-decoration: none;
+}
+
+a[disabled] {
+    pointer-events: none;
+    cursor: default;
+    color: rgba(255, 255, 255, .25);
+}
+
+@media screen and (max-width: 600px) {
+    .info {
+        width: 95%;
+        padding: 42px;
+        font-size: 20px;
+    }
+
+    .info img {
+        top: 0;
+        width: 24px;
+    }
+}
+
+@keyframes fadeInAndOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
