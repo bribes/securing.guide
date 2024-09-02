@@ -59,7 +59,7 @@ window.steps = [
         "points": [
             "Change the name [here](https://account.microsoft.com/profile/edit-name)",
             "Change the DOB and location [here](https://account.live.com/editprof.aspx)",
-            "Turn off old security notifications [here](https://account.live.com/SecurityNotifications/Update)"
+            "[Turn off old security notifications](https://account.live.com/SecurityNotifications/Update)"
         ]
     },
     {
