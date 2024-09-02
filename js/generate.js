@@ -1,4 +1,11 @@
-var currentPage = 0;
+const urlParams = new URLSearchParams(window.location.search);
+var stepParam = urlParams.get('step');
+try {
+    if (stepParam) stepParam = Number(stepParam) - 1;
+} catch {
+    stepParam = null;
+}
+var currentPage = stepParam ?? 0;
 var list = document.getElementById("list");
 var pointDisplay = document.getElementById("pointDisplay");
 var prevEl = document.getElementById("prevEl");
@@ -62,7 +69,10 @@ function loadPage(page) {
         else nextEl.removeAttribute("disabled")
 
         stepDisplay.innerHTML = `step ${currentPage + 1} of ${steps.length}`;
+
+        if (currentPage == 0) history.pushState('', '', location.pathname)
+        else history.pushState('', '', '?step=' + (currentPage + 1));
     }
 }
 
-loadPage(0)
+loadPage(currentPage)
