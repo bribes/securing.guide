@@ -6,24 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <title>securing.guide</title>
+    <title>Steam securing.guide</title>
     <meta name="title" content="securing.guide" />
-    <meta name="description" content="Guide to securing your accounts." />
+    <meta name="description" content="A Steam account securing guide." />
     <meta name="theme-color" content="#ffffff" />
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://securing.guide" />
-    <meta property="og:image" content="https://securing.guide/icons/2fa.png" />
+    <meta property="og:image" content="https://securing.guide/icons/steam.png" />
     <meta property="og:title" content="securing.guide" />
     <meta property="og:site_name" content="securing.guide" />
-    <meta property="og:description" content="Guide to securing your accounts." />
+    <meta property="og:description" content="A Steam account securing guide." />
 
     <meta property="twitter:url" content="https://securing.guide" />
     <meta property="twitter:title" content="securing.guide" />
-    <meta property="twitter:description" content="Guide to securing your accounts." />
-    <meta property="twitter:image" content="https://securing.guide/icons/2fa.png" />
+    <meta property="twitter:description" content="A Steam account securing guide." />
+    <meta property="twitter:image" content="https://securing.guide/icons/steam.png" />
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,36 +31,25 @@
 
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.ico">
+
+    <script src="../guides/steam.js"></script>
+    <script src="../js/generate.js" defer></script>
 </head>
 
 <body>
     <a rel="nofollow" href="https://github.com/bribes/securing.guide" target="_blank" title="GitHub Repository"
-        class="github"><img src="./icons/github.png" alt="GitHub"></a>
+        class="github"><img src="../icons/github.png" alt="GitHub"></a>
     <div class="container">
-        <h1><a href="/">securing.guide</a></h1>
-
-        <h3>secure your social media accounts</h3>
-        <div class="pages">
-            <a href="./minecraft">
-                <div>
-                    <img src="./icons/minecraft.png" width="32">
-                </div>
-            </a>
-            <a href="./discord">
-                <div>
-                    <img src="./icons/discord.png" width="32">
-                </div>
-            </a>
-            <a href="./steam">
-                <div>
-                    <img src="./icons/steam.png" width="32">
-                </div>
-            </a>
-            <a href="./2fa">
-                <div>
-                    2FA
-                </div>
-            </a>
+        <h1><a href="/">securing.guide</a><i>/steam</i></h1>
+        <div class="info steam">
+            <img src="../icons/steam.png" width="48" alt="Steam" />
+            <ul id="list">
+            </ul>
+        </div>
+        <div class="paginate">
+            <a id="prevEl" href="javascript:prevPage()" disabled><</a>
+            <p id="stepDisplay">step 1 of 1</p>
+            <a id="nextEl" href="javascript:nextPage()">></a>
         </div>
     </div>
 </body>

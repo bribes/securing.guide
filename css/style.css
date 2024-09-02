@@ -51,7 +51,7 @@ body {
     margin-bottom: 4px;
 }
 
-.info.minecraft{
+.info.minecraft {
     padding-top: 12px;
 }
 
@@ -61,6 +61,18 @@ body {
 
 .discord img {
     margin-bottom: 14px;
+}
+
+.steam.minecraft {
+    padding-top: 12px;
+}
+
+.info.steam {
+    padding-top: 15px;
+}
+
+.steam img {
+    margin-bottom: 7px;
 }
 
 .options {
@@ -88,7 +100,7 @@ p,
 }
 
 a:hover {
- opacity: .6;   
+    opacity: .6;
 }
 
 h1 {
@@ -149,11 +161,11 @@ ul {
     left: 17.5%;
 }
 
-ul > li {
+ul>li {
     text-indent: -5px;
 }
 
-ul > li:before {
+ul>li:before {
     content: "— ";
     text-indent: -5px;
 }
@@ -187,7 +199,7 @@ a[disabled] {
     text-decoration: none;
 }
 
-.pages a > div {
+.pages a>div {
     border: 1px solid rgba(255, 255, 255, .5);
     border-radius: .5rem;
     width: 52px;
@@ -199,31 +211,35 @@ a[disabled] {
 }
 
 @media screen and (max-width: 600px) {
-    .info, .options {
-        width: 95vw!important;
-        padding: 42px!important;
-        font-size: 20px!important;
+
+    .info,
+    .options {
+        width: 95vw !important;
+        padding: 42px !important;
+        font-size: 20px !important;
     }
 
     .info img {
-        position: absolute!important;
-        width: 24px!important;
-        left: 0!important;
-        top: 0!important;
+        position: absolute !important;
+        width: 24px !important;
+        left: 0 !important;
+        top: 0 !important;
     }
 
     ul {
-        position: unset!important;
+        position: unset !important;
     }
 
     .github {
-        display: none!important;
+        display: none !important;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .info, .options {
-        min-width: unset!important;
+
+    .info,
+    .options {
+        min-width: unset !important;
     }
 }
 
@@ -240,3 +256,99 @@ a[disabled] {
         opacity: 1;
     }
 }
+
+
+/* FOR STEAM, FROM totp.codes */
+.steamOuter {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding: 12px;
+    border-radius: .8rem;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Inconsolata';
+    font-weight: 500;
+    width: 135%;
+    color: white;
+    -webkit-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+    -webkit-font-smoothing: antialiased;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: rgba(255, 255, 255, .75);
+    box-shadow: none;
+}
+
+code {
+    font-family: 'Inconsolata', sans-serif;
+    font-size: 38px;
+    font-weight: 500;
+    display: block;
+    padding: 7px;
+    border-radius: 6px;
+    color: white;
+    opacity: .15;
+    margin-top: .5rem;
+    cursor: pointer;
+}
+
+p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, .5);
+    font-weight: 500;
+}
+
+.tippy-box canvas {
+    filter: drop-shadow(0 0 4px #000);
+}
+
+.tippy-box[data-theme~=translucent] {
+    background-color: #262626;
+    border-radius: 2.65rem;
+    padding: .8rem
+}
+
+.tippy-box[data-theme~=translucent]>.tippy-arrow {
+    width: 14px;
+    height: 14px
+}
+
+.tippy-box[data-theme~=translucent][data-placement^=top]>.tippy-arrow:before {
+    border-width: 7px 7px 0;
+    border-top-color: #262626
+}
+
+.tippy-box[data-theme~=translucent][data-placement^=bottom]>.tippy-arrow:before {
+    border-width: 0 7px 7px;
+    border-bottom-color: #262626
+}
+
+.tippy-box[data-theme~=translucent][data-placement^=left]>.tippy-arrow:before {
+    border-width: 7px 0 7px 7px;
+    border-left-color: #262626
+}
+
+.tippy-box[data-theme~=translucent][data-placement^=right]>.tippy-arrow:before {
+    border-width: 7px 7px 7px 0;
+    border-right-color: #262626
+}
+
+.tippy-box[data-theme~=translucent]>.tippy-backdrop {
+    background-color: #262626
+}
+
+.tippy-box[data-theme~=translucent]>.tippy-svg-arrow {
+    fill: #262626
+}
+
+/* END */

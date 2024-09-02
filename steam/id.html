@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Minecraft securing.guide</title>
+    <meta name="title" content="securing.guide" />
+    <meta name="description" content="A Minecraft account securing guide." />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://securing.guide" />
+    <meta property="og:image" content="https://securing.guide/icons/minecraft.png" />
+    <meta property="og:title" content="securing.guide" />
+    <meta property="og:site_name" content="securing.guide" />
+    <meta property="og:description" content="A Minecraft account securing guide." />
+
+    <meta property="twitter:url" content="https://securing.guide" />
+    <meta property="twitter:title" content="securing.guide" />
+    <meta property="twitter:description" content="A Minecraft account securing guide." />
+    <meta property="twitter:image" content="https://securing.guide/icons/minecraft.png" />
+
+    <style>
+        .odometer.odometer-animating-up .odometer-ribbon-inner,
+        .odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner,
+        #steamid {
+            -webkit-transition-duration: 1.8s !important;
+            -moz-transition-duration: 1.8s !important;
+            -ms-transition-duration: 1.8s !important;
+            -o-transition-duration: 1.8s !important;
+            transition-duration: 1.8s !important
+        }
+
+        .odometer .odometer-inside .odometer-digit:first-child,
+        .odometer .odometer-inside .odometer-formatting-mark:nth-child(2),
+        .odometer .odometer-inside .odometer-digit:last-child,
+        .odometer-formatting-mark {
+            display: none
+        }
+    </style>
+    <link rel="preconnect" href="https://totp.codes">
+    <link rel="stylesheet" href="https://totp.codes/css/odometer.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/animations/shift-away.css" />
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+
+    <script>
+        window.odometerOptions = {
+            format: '(ddd)',
+            duration: 1100
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.3.1/sha1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy.umd.min.js" crossorigin="anonymous"></script>
+    <script src="https://totp.codes/js/odometer.js"></script>
+    <script src="../js/steamid.js" defer></script>
+</head>
+
+<body>
+    <a rel="nofollow" href="https://github.com/bribes/securing.guide" target="_blank" title="GitHub Repository"
+        class="github"><img src="../icons/github.png" alt="GitHub"></a>
+    <div class="container">
+        <h1><a href="/">securing.guide</a><i>/steam/id</i></h1>
+        <div class="steamOuter">
+            <input type="text" maxlength="32" autocomplete="off" id="vanity" placeholder="paste your vanity id here">
+            <code id="steamid" class="stat-number odometer">00000000000000000</code>
+            <p>SteamID64 / click to copy</b></p>
+        </div>
+    </div>
+</body>
+
+</html>
