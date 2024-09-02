@@ -15,7 +15,7 @@ window.steps = [
     },
     {
         "points": [
-            "Go to the [Security](https://account.microsoft.com/security)    tab ",
+            "Go to the [Security](https://account.microsoft.com/security) tab",
             "Click on [Manage how I sign in](https://account.live.com/proofs/manage/additional)",
             "Add your own recovery email"
         ]

@@ -43,7 +43,24 @@ body {
     -webkit-font-smoothing: antialiased;
     position: relative;
     padding-bottom: 16px;
+}
+
+.info img {
+    margin: 12px;
+    margin-left: 4%;
+    margin-bottom: 3px;
+}
+
+.info.minecraft{
     padding-top: 13px;
+}
+
+.info.discord {
+    padding-top: 22px;
+}
+
+.discord img {
+    margin-bottom: 14px;
 }
 
 .options {
@@ -139,12 +156,6 @@ ul > li {
 ul > li:before {
     content: "— ";
     text-indent: -5px;
-}
-
-.info img {
-    margin: 12px;
-    margin-left: 4%;
-    margin-bottom: 3px;
 }
 
 .paginate {
