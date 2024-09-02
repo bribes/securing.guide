@@ -211,6 +211,9 @@ a[disabled] {
 }
 
 @media screen and (max-width: 600px) {
+    input {
+        width: 100% !important;
+    }
 
     .info,
     .options {
@@ -349,6 +352,23 @@ p {
 
 .tippy-box[data-theme~=translucent]>.tippy-svg-arrow {
     fill: #262626
+}
+
+@-moz-document url-prefix() {
+    input {
+        padding: 13px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    code {
+        padding: 5px;
+
+    }
+
+    ::placeholder {
+        font-weight: 300;
+    }
 }
 
 /* END */
