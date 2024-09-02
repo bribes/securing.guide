@@ -169,6 +169,7 @@ a[disabled] {
 .pages {
     display: flex;
     gap: 15%;
+    justify-content: center;
 }
 
 .pages a {
