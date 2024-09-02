@@ -31,7 +31,7 @@ window.steps = [
         "points": [
             "Download/save purchase history [here](https://store.steampowered.com/account/history)",
             "Download/save license history [here](https://store.steampowered.com/account/licenses)",
-            "Find/save your SteamID64 [here](https://securing.guide/steam/id)"
+            "Find/save your SteamID64 [here](https://securing.guide/steam-id)"
         ]
     }
 ]
