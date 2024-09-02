@@ -22,6 +22,26 @@ body {
     min-width: 100%;
 }
 
+@media (scripting: enabled) {
+    .preload * {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -ms-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .preload * {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -ms-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
+    }
+}
+
 .container {
     text-align: center;
     display: flex;
