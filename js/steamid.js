@@ -8,7 +8,7 @@ async function updateSteamID() {
         var prev = check;
         var wow = setTimeout(async () => {
             if (prev == check) {
-                const steamAPI = await fetch("https://cors.faav.top/steam/" + vanity.value)
+                const steamAPI = await fetch("https://cors.faav.top/steam/" + encodeURIComponent(vanity.value))
                 if (steamAPI.status == 200) {
                     const steamData = await steamAPI.json();
                     if (!steamData.error) {
