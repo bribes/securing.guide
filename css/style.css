@@ -48,11 +48,11 @@ body {
 .info img {
     margin: 12px;
     margin-left: 4%;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
 .info.minecraft{
-    padding-top: 13px;
+    padding-top: 12px;
 }
 
 .info.discord {
