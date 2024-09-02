@@ -52,14 +52,14 @@ window.steps = [
         "points": [
             "Make your new alias primary",
             "Remove all other aliases",
-            "Skype usernames cannot be removed"
+            "Turn off email forwarding [here](https://outlook.live.com/mail/options/mail/forwarding)"
         ]
     },
     {
         "points": [
-            "Go back to the [Your Info](https://account.microsoft.com/profile) tab",
-            "Click on 'Edit profile info'",
-            "Change the name and date of birth"
+            "Change the name [here](https://account.microsoft.com/profile/edit-name)",
+            "Change the DOB and location [here](https://account.live.com/editprof.aspx)",
+            "Turn off old security notifications [here](https://account.live.com/SecurityNotifications/Update)"
         ]
     },
     {
