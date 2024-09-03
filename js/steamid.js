@@ -1,104 +1,124 @@
 var none = "00000000000000000";
 var steamId = none;
 var check = 0;
-var noAnim = "transition: opacity 1.8s ease-in-out !important;";
+window.initializing = false;
 
-function reInit(data, cb = null) {
-    window.wow = setTimeout(() => {
-        if (cb) cb()
+const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
 
-        var codeEl = document.createElement('code');
-        codeEl.innerHTML = data;
-        codeEl.style.opacity = '1';
-        codeEl.style['margin-top'] = '10px';
-        codeEl.style['padding-bottom'] = '10px';
-        codeEl.id = 'steamid';
-        codeEl.classList.value = "stat-number odometer odometer-auto-theme";
-        document.getElementById('steamid').remove();
-        document.getElementById('vanity').after(codeEl);
+function eventInit() {
+    var codeEl = document.createElement('code');
+    codeEl.style.opacity = '1';
+    codeEl.id = 'steamid';
+    codeEl.classList.value = "stat-number odometer odometer-auto-theme";
+    var spanEl = document.createElement('span');
+    spanEl.innerHTML = steamId;
+    spanEl.classList.value = "odometer-digit odometer-digit-spacer";
+    if (isMobile) {
+        codeEl.style['margin-bottom'] = '-.035em'
+        codeEl.style['margin-top'] = '.1825em'
+        spanEl.style['line-height'] = "1.35em"
+    } else {
+        codeEl.style['margin-bottom'] = '.0125em'
+        codeEl.style['margin-top'] = '.1825em'
+        spanEl.style['line-height'] = "1.2em";
+    }
+    codeEl.append(spanEl)
+    document.getElementById('steamid').remove();
+    document.getElementById('vanity').after(codeEl);
 
-        tippy('#steamid', {
-            content: "Copied!",
-            trigger: 'click',
-            animation: 'shift-away',
-            hideOnClick: false,
-            theme: 'translucent',
-            offset: [0, -10],
-            onShow(instance) {
-                setTimeout(() => {
-                    instance.hide();
-                }, 500);
-            }
-        });
+    tippy('#steamid', {
+        content: "Copied!",
+        trigger: 'click',
+        animation: 'shift-away',
+        hideOnClick: false,
+        theme: 'translucent',
+        offset: [0, -10],
+        onShow(instance) {
+            setTimeout(() => {
+                instance.hide();
+            }, 500);
+        }
+    });
 
-        document.getElementById('steamid').addEventListener('click', () => copyTextToClipboard(steamId));
-    }, 1760)
+    document.getElementById('steamid').addEventListener('click', () => copyTextToClipboard(steamId));
+    window.initializing = false;
+    document.getElementById('steamid').removeEventListener('odometerdone', eventInit)
+}
+
+function reInit() {
+    if (window.initializing == true) return;
+    window.initializing = true;
+
+    document.getElementById('steamid').addEventListener('odometerdone', eventInit)
 }
 
 async function updateSteamID() {
     try {
         var prev = check;
-        var wow = setTimeout(async () => {
+        try {
+            clearInterval(window.wow)
+        } catch { }
+        window.wow = setTimeout(async () => {
             if (prev == check) {
                 const steamAPI = await fetch("https://cors.faav.top/steam/" + encodeURIComponent(document.getElementById('vanity').value))
                 if (steamAPI.status == 200) {
                     const steamData = await steamAPI.json();
                     if (!steamData.error) {
-                        steamId = steamData.id;
-
-                        document.getElementById('steamid').setAttribute("style",noAnim)
+                        document.getElementById('steamid').setAttribute("style", "")
                         document.getElementById('steamid').style.opacity = '1';
 
+                        reInit()
                         new Odometer({
-                            el: document.getElementById('steamid')
+                            el: document.getElementById('steamid'),
+                            value: steamId
                         });
 
-                        document.getElementById('steamid').innerHTML = steamData.id;
-                        reInit(steamData.id)
+                        steamId = steamData.id;
+                        document.getElementById('steamid').innerHTML = steamId;
                     } else {
-                        steamId = none;
 
-                        document.getElementById('steamid').setAttribute("style",noAnim);
+                        document.getElementById('steamid').setAttribute("style", "");
+                        document.getElementById('steamid').style.opacity = '.15';
 
                         new Odometer({
                             el: document.getElementById('steamid'),
-                            value: Number(document.getElementById('steamid').innerText)
+                            value: steamId
                         });
 
-                        document.getElementById('steamid').innerHTML = none;
+                        steamId = none;
+                        document.getElementById('steamid').innerHTML = steamId;
                     }
                 }
-            } else {
-                clearTimeout(wow)
             }
-        }, 240)
+        }, 375)
     } catch {
-        steamId = none;
-
-        document.getElementById('steamid').setAttribute("style",noAnim);
+        document.getElementById('steamid').setAttribute("style", "");
+        document.getElementById('steamid').style.opacity = '.15';
 
         new Odometer({
             el: document.getElementById('steamid'),
-            value: Number(document.getElementById('steamid').innerText)
+            value: steamId
         });
 
-        document.getElementById('steamid').innerHTML = none;
+        steamId = none;
+        document.getElementById('steamid').innerHTML = steamId;
     }
 }
 
 document.getElementById('vanity').addEventListener('input', async function () {
+    document.getElementById('vanity').value = document.getElementById('vanity').value.trim();
     check++
     if (document.getElementById('vanity').value.length == 0) {
-        steamId = none;
-
-        document.getElementById('steamid').setAttribute("style",noAnim);
+        document.getElementById('steamid').setAttribute("style", "");
+        document.getElementById('steamid').style.opacity = '.15';
 
         new Odometer({
             el: document.getElementById('steamid'),
-            value: Number(document.getElementById('steamid').innerText)
+            value: steamId
         });
 
-        document.getElementById('steamid').innerHTML = none;
+        steamId = none;
+        document.getElementById('steamid').innerHTML = steamId;
     } else {
         await updateSteamID();
     }
