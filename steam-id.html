@@ -33,13 +33,6 @@
             -o-transition-duration: 1.8s !important;
             transition-duration: 1.8s !important
         }
-
-        .odometer .odometer-inside .odometer-digit:first-child,
-        .odometer .odometer-inside .odometer-formatting-mark:nth-child(2),
-        .odometer .odometer-inside .odometer-digit:last-child,
-        .odometer-formatting-mark {
-            display: none
-        }
     </style>
     <link rel="preconnect" href="https://totp.codes">
     <link rel="stylesheet" href="https://totp.codes/css/odometer.css">
@@ -55,8 +48,10 @@
 
     <script>
         window.odometerOptions = {
+            auto: false,
             format: '(ddd)',
-            duration: 1100
+            duration: 1100,
+            minIntegerLen: 17
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.3.1/sha1.js" crossorigin="anonymous"></script>
