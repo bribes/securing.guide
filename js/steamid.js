@@ -1,11 +1,10 @@
-const vanity = document.getElementById('vanity');
 var none = "00000000000000000";
 var steamId = none;
 var check = 0;
 var noAnim = "transition: opacity 1.8s ease-in-out !important;";
 
 function reInit(data, cb = null) {
-    setTimeout(() => {
+    window.wow = setTimeout(() => {
         if (cb) cb()
 
         var codeEl = document.createElement('code');
@@ -41,7 +40,7 @@ async function updateSteamID() {
         var prev = check;
         var wow = setTimeout(async () => {
             if (prev == check) {
-                const steamAPI = await fetch("https://cors.faav.top/steam/" + encodeURIComponent(vanity.value))
+                const steamAPI = await fetch("https://cors.faav.top/steam/" + encodeURIComponent(document.getElementById('vanity').value))
                 if (steamAPI.status == 200) {
                     const steamData = await steamAPI.json();
                     if (!steamData.error) {
@@ -87,9 +86,9 @@ async function updateSteamID() {
     }
 }
 
-vanity.addEventListener('input', async function () {
+document.getElementById('vanity').addEventListener('input', async function () {
     check++
-    if (vanity.value.length == 0) {
+    if (document.getElementById('vanity').value.length == 0) {
         steamId = none;
 
         document.getElementById('steamid').setAttribute("style",noAnim);
