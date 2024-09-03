@@ -72,7 +72,7 @@ async function updateSteamID() {
             } else {
                 clearTimeout(wow)
             }
-        }, 350)
+        }, 240)
     } catch {
         steamId = none;
 
