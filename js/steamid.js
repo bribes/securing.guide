@@ -28,7 +28,7 @@ async function updateSteamID() {
                     }
                 }
             }
-        }, 360)
+        }, 275)
     } catch {
         document.getElementById('steamid').setAttribute("style", "");
         document.getElementById('steamid').style.opacity = '.15';
