@@ -43,16 +43,16 @@ window.steps = [
     },
     {
         "points": [
+            "Turn off email forwarding [here](https://outlook.live.com/mail/options/mail/forwarding)",
             "Go to the [Your Info](https://account.microsoft.com/profile) tab",
-            "Click on [Edit account info](https://account.live.com/names/manage)",
-            "Add a new email address"
+            "Click on [Edit account info](https://account.live.com/names/manage)"
         ]
     },
     {
         "points": [
+            "Add a new email address",
             "Make your new alias primary",
-            "Remove all other aliases",
-            "Turn off email forwarding [here](https://outlook.live.com/mail/options/mail/forwarding)"
+            "Remove all other aliases"
         ]
     },
     {
