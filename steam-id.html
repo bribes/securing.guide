@@ -23,19 +23,7 @@
     <meta property="twitter:description" content="Find your SteamID64." />
     <meta property="twitter:image" content="https://securing.guide/icons/steam.png" />
 
-    <style>
-        .odometer.odometer-animating-up .odometer-ribbon-inner,
-        .odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner,
-        #steamid {
-            -webkit-transition-duration: 1.8s !important;
-            -moz-transition-duration: 1.8s !important;
-            -ms-transition-duration: 1.8s !important;
-            -o-transition-duration: 1.8s !important;
-            transition-duration: 1.8s !important
-        }
-    </style>
     <link rel="preconnect" href="https://totp.codes">
-    <link rel="stylesheet" href="https://totp.codes/css/odometer.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,17 +34,9 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.ico">
 
-    <script>
-        window.odometerOptions = {
-            auto: false,
-            format: '(ddd)',
-            duration: 1100,
-            minIntegerLen: 17
-        }
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy.umd.min.js" crossorigin="anonymous"></script>
-    <script src="https://totp.codes/js/odometer.js"></script>
+    <script type="module" src="https://totp.codes/js/rolling-number.js"></script>
     <script src="./js/steamid.js" defer></script>
     <script>window.addEventListener("load",()=>document.body.classList.remove("preload"))</script>
 </head>
@@ -68,7 +48,7 @@
         <h1><a href="/">securing.guide</a><i>/steam-id</i></h1>
         <div class="steamOuter">
             <input type="text" maxlength="32" autocomplete="off" id="vanity" placeholder="paste your vanity id here">
-            <code id="steamid" class="stat-number odometer">00000000000000000</code>
+            <layflags-rolling-number data-minimum="17" id="steamid">00000000000000000</layflags-rolling-number>
             <p>SteamID64 / click to copy</b></p>
         </div>
     </div>

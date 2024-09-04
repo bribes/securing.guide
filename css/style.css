@@ -312,7 +312,7 @@ input:focus {
     box-shadow: none;
 }
 
-code {
+layflags-rolling-number {
     font-family: 'Inconsolata', sans-serif;
     font-size: 38px;
     font-weight: 500;
@@ -323,6 +323,9 @@ code {
     opacity: .15;
     margin-top: .5rem;
     cursor: pointer;
+    line-height: 1.25em;
+    --roll-duration: 1.5s;
+    transition-duration: 1.5s;
 }
 
 p {

@@ -1,56 +1,6 @@
 var none = "00000000000000000";
 var steamId = none;
 var check = 0;
-window.initializing = false;
-
-const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
-
-function eventInit() {
-    var codeEl = document.createElement('code');
-    codeEl.style.opacity = '1';
-    codeEl.id = 'steamid';
-    codeEl.classList.value = "stat-number odometer odometer-auto-theme";
-    var spanEl = document.createElement('span');
-    spanEl.innerHTML = steamId;
-    spanEl.classList.value = "odometer-digit odometer-digit-spacer";
-    if (isMobile) {
-        codeEl.style['margin-bottom'] = '-.035em'
-        codeEl.style['margin-top'] = '.1825em'
-        spanEl.style['line-height'] = "1.35em"
-    } else {
-        codeEl.style['margin-bottom'] = '.0125em'
-        codeEl.style['margin-top'] = '.1825em'
-        spanEl.style['line-height'] = "1.2em";
-    }
-    codeEl.append(spanEl)
-    document.getElementById('steamid').remove();
-    document.getElementById('vanity').after(codeEl);
-
-    tippy('#steamid', {
-        content: "Copied!",
-        trigger: 'click',
-        animation: 'shift-away',
-        hideOnClick: false,
-        theme: 'translucent',
-        offset: [0, -10],
-        onShow(instance) {
-            setTimeout(() => {
-                instance.hide();
-            }, 500);
-        }
-    });
-
-    document.getElementById('steamid').addEventListener('click', () => copyTextToClipboard(steamId));
-    window.initializing = false;
-    document.getElementById('steamid').removeEventListener('odometerdone', eventInit)
-}
-
-function reInit() {
-    if (window.initializing == true) return;
-    window.initializing = true;
-
-    document.getElementById('steamid').addEventListener('odometerdone', eventInit)
-}
 
 async function updateSteamID() {
     try {
@@ -67,41 +17,24 @@ async function updateSteamID() {
                         document.getElementById('steamid').setAttribute("style", "")
                         document.getElementById('steamid').style.opacity = '1';
 
-                        reInit()
-                        new Odometer({
-                            el: document.getElementById('steamid'),
-                            value: steamId
-                        });
-
                         steamId = steamData.id;
-                        document.getElementById('steamid').innerHTML = steamId;
+                        document.getElementById('steamid').value = steamId;
                     } else {
-
                         document.getElementById('steamid').setAttribute("style", "");
                         document.getElementById('steamid').style.opacity = '.15';
 
-                        new Odometer({
-                            el: document.getElementById('steamid'),
-                            value: steamId
-                        });
-
                         steamId = none;
-                        document.getElementById('steamid').innerHTML = steamId;
+                        document.getElementById('steamid').value = steamId;
                     }
                 }
             }
-        }, 375)
+        }, 360)
     } catch {
         document.getElementById('steamid').setAttribute("style", "");
         document.getElementById('steamid').style.opacity = '.15';
 
-        new Odometer({
-            el: document.getElementById('steamid'),
-            value: steamId
-        });
-
         steamId = none;
-        document.getElementById('steamid').innerHTML = steamId;
+        document.getElementById('steamid').value = steamId;
     }
 }
 
@@ -112,13 +45,8 @@ document.getElementById('vanity').addEventListener('input', async function () {
         document.getElementById('steamid').setAttribute("style", "");
         document.getElementById('steamid').style.opacity = '.15';
 
-        new Odometer({
-            el: document.getElementById('steamid'),
-            value: steamId
-        });
-
         steamId = none;
-        document.getElementById('steamid').innerHTML = steamId;
+        document.getElementById('steamid').value = steamId;
     } else {
         await updateSteamID();
     }
@@ -158,10 +86,6 @@ function copyTextToClipboard(text) {
         console.error('Async: Could not copy text: ', err);
     });
 }
-
-new Odometer({
-    el: document.getElementById('steamid')
-});
 
 tippy('#steamid', {
     content: "Copied!",
