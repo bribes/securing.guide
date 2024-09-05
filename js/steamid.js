@@ -38,8 +38,17 @@ async function updateSteamID() {
     }
 }
 
+const detectSteam = (path) => {
+    var splitArr = document.getElementById('vanity').value.split(path);
+    var detectedSteam = splitArr[splitArr.length-1].split('/')[0];
+    document.getElementById('vanity').value = detectedSteam;
+}
+
 document.getElementById('vanity').addEventListener('input', async function () {
-    document.getElementById('vanity').value = document.getElementById('vanity').value.trim();
+    if (document.getElementById('vanity').value.includes('profiles/')) detectSteam('profiles/')
+    else if (document.getElementById('vanity').value.includes('id/')) detectSteam('id/');
+
+    document.getElementById('vanity').value = document.getElementById('vanity').value.replace(/ /g, '');
     check++
     if (document.getElementById('vanity').value.length == 0) {
         document.getElementById('steamid').setAttribute("style", "");
