@@ -222,6 +222,8 @@ a[disabled] {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
+    max-width: 500px;
 }
 
 .pages a {

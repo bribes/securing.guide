@@ -1,4 +1,4 @@
-const CACHE_NAME = 'securing.guides';
+const CACHE_NAME = 'securing.guide';
 
 self.addEventListener('install', (event) => {
     self.skipWaiting(); // Make this SW activate immediately
