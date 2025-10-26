@@ -51,11 +51,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://securing.guide/xbox</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://securing.guide/valorant</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
