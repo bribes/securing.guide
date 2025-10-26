@@ -95,6 +95,10 @@ body {
     margin-bottom: 7px;
 }
 
+.info.snapchat {
+    padding-top: 16px;
+}
+
 .options {
     background-color: #121212;
     border: 1px solid #808080;
