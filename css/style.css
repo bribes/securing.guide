@@ -240,7 +240,7 @@ a[disabled] {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #808080;
 }
 
 @media screen and (max-width: 600px) {
