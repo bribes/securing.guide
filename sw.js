@@ -56,9 +56,16 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+    const req = event.request;
+
+    // Skip prerender or special-purpose requests
+    if (req.headers.get('Purpose') === 'prerender') {
+        return event.respondWith(fetch(req));
+    }
+
     // Always try the network first
     event.respondWith(
-        fetch(event.request)
+        fetch(req)
             .then((networkResponse) => {
                 const cloned = networkResponse.clone();
 
@@ -69,7 +76,7 @@ self.addEventListener('fetch', (event) => {
                     networkResponse.status === 200
                 ) {
                     caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(event.request, cloned);
+                        cache.put(req, cloned);
                     });
                 }
 
@@ -77,9 +84,9 @@ self.addEventListener('fetch', (event) => {
             })
             .catch(() => {
                 // If network fails, use cache
-                return caches.match(event.request).then((cachedResponse) => {
+                return caches.match(req).then((cachedResponse) => {
                     // For navigation fallback
-                    if (!cachedResponse && event.request.mode === 'navigate') {
+                    if (!cachedResponse && req.mode === 'navigate') {
                         return caches.match('/');
                     }
                     return cachedResponse;
