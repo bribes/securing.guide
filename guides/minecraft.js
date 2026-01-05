@@ -50,8 +50,8 @@ window.steps = [
     },
     {
         "points": [
-            "Add a new email address",
-            "Make your new alias primary",
+            "Add a new alias and make it primary",
+            "Use an external email (e.g., Gmail)",
             "Remove all other aliases"
         ]
     },
