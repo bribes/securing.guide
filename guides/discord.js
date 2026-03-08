@@ -15,6 +15,13 @@ window.steps = [
     },
     {
         "points": [
+            "Pullback test the OGE (optional)",
+            "Try to pull the account through [support](https://support.discord.com/)",
+            "This confirms the OGE is legitimate"
+        ]
+    },
+    {
+        "points": [
             "Change the password",
             "Make sure your password is secure",
             "Click [here](https://password.click) to generate a password"
@@ -29,8 +36,8 @@ window.steps = [
     },
     {
         "points": [
-            "Turn off 2FA",
             "Remove SMS backup and security keys",
+            "Turn off 2FA and wait 24 hours",
             "Enable 2FA with an [authenticator](https://securing.guide/2fa)"
         ]
     },
